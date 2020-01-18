@@ -21,3 +21,21 @@
 \newcommand{\graduation}{} % Angestrebter Titel (nur bei Abschlussarbeiten, sonst leer lassen/auskommentieren)
 
 \newcommand{\keywords}{{}} % Stichworte (durch Komma getrennt)
+
+\newcommand\chapterauthor[1]{\printchapterauthor{#1}}
+%https://tex.stackexchange.com/questions/156862/displaying-author-for-each-chapter-in-book
+
+\makeatletter
+\newcommand{\printchapterauthor}[1]{%
+  {\parindent0pt\vspace*{-25pt}%
+  \linespread{1.1}\large\scshape#1%
+  \par\nobreak\vspace*{15pt}}
+  \@afterheading%
+}
+\newcommand{\printsubchapterauthor}[1]{%
+  {\parindent0pt\vspace*{-5pt}%
+  \linespread{1.1}\large\scshape#1%
+  \par\nobreak\vspace*{15pt}}
+  \@afterheading%
+}
+\makeatother
