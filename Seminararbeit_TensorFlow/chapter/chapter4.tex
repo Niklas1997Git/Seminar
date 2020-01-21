@@ -1,6 +1,5 @@
 \chapter{Arbeitsweise}
 \label{chap:arbeitsweise}
-
 %1.Unterkapitel
 \section{Tensoren}
 \label{sec:tensoren}
@@ -9,11 +8,14 @@ Insgesamt 1-2 Seiten
 
 \subsection{Mathematische Definition}
 \label{sec:mathematischeDefinition}
-Was ist die Motivation hinter dieser Arbeit
+Bild 5.9 Deep-Learning Seite 136
+Ein Tensor ist eine Bezeichnung für ein n-dimensionales Feld. In der Abbildung sind unterschiedliche Dimensionen von Feldern dargestellt. "Beispielsweise ist ein 1-x-1-Tensor ein Skalar, ein 1-x-n-Tensor ein Vektor, ein n-x-n-Tensor eine Matrix, und ein n-x-n-x-n-Tensor ist einfach ein dreidimensionales Feld"\citep{Einfuehrung}.
 
 \subsection{Tensoren in TensorFlow}
 \label{sec:tensorenInTensorflow}
-Was ist die Motivation hinter dieser Arbeit
+In TensorFlow hingegen werden die Daten, die durch den Graphen fließen Tensoren genannt. Da diese Daten wie die Tensoren in der Mathematik verschiedene Dimensionen annehmen können, wie zum Beispiel einfache Zahlenwerte oder dreidimensionale Felder eines Bildes, basiert der Begriff auf dem mathematischen Begriff.
+
+Tensor-Objekte entstehen bei der Ausführung einer Operation. 
 
 %2.Unterkapitel
 \section{Operationen}
@@ -37,19 +39,25 @@ Insgesamt 3 Seiten
 
 \subsection{Aufbau}
 \label{sec:graphenAufbau}
-Was ist die Motivation hinter dieser Arbeit
+
+Wie schon in Kapitel \ref{sec:allgemeines} erwähnt wurde, arbeitet TensorFlow auf einem Datenflussgraphen. Dabei handelt es sich um ein gerichtetes Diagramm, das ein mathematisches Problem darstellt. Diese Datenflussgraphen bestehen aus Tensoren \ref{sec:tensoren} und Operationen \ref{sec:operationen}, die miteinander verbunden sind. Durch eine Aneinanderreihung von unterschiedlichen Operationen, mit den dazugehörigen Tensoren als Werte, entsteht ein Datenflussgraph. Dieser wird als mathematische Grundlage für das Neuronale Netz genutzt.
 
 \subsection{Funktionsweise}
 \label{sec:graphenFunktionsweise}
-Was ist die Motivation hinter dieser Arbeit
+Hier Bild 5.11 aus dem Buch Deep-Learning einfügen.\\
+Die Abbildung zeigt eine einfache Berechnung als Datenflussgraphen, um den Ablauf zu verdeutlichen. Die Berechnung eines Graphen kann nur in einem \textit{tf.Session()}-Block ausgeführt werden. Am Anfang dieses Blocks wird zusätzlich eine \textit{tf.Session()} Variable angelegt. Dies wird durch den Ausdruck \textit{with tf.Session() as sess} realisiert. Das \textit{Session()}-Objekt wird später benötigt, um diese zu starten. Bevor die \textit{Session} gestartet wird, werden die Konstanten, oder auch Tensoren, a, b, c und d erstellt und ein Wert zugewiesen. Die letzte Operation wurde dem Tensor \textit{result} in der Form \textit{result = tf.sqrt(x3, "Wurzel")} zugewiesen. Für den Start muss der Operation der Tensor übergeben werden, der berechnet werden soll. Diese Operation muss zusätzlich einer Variablen übergeben werden, damit der Wert weiter verwendet werden kann. In diesem Fall sieht die Funktion wie folgt aus: \textit{res = sess.run(result)}. Über die Variable \textit{res} kann nun das Ergebnis ausgegeben werden.
+
+Hier Bild 3-4 aus Buch EInfuehrung einfügen
+Vor der Ausführung eines \textit{Session}-Blocks enthalten die wird durch das Aufrufen einer Operation nur eine Instanz dieses Objekts erstellt. Dieses Objekt enthält nur Referenz der Daten und noch keine richtigen Daten. Dies ändert sich mit dem Start der Ausführung und dem Durchlaufen der Operationen. Wie in der Abbildung zu sehen ist werden die Referenzen der Tensor-Objekte in A durch Tensor-Objekt-Instanzen ersetzt.
 
 \subsection{Darstellung von Operationen}
 \label{sec:darstellungOperationen}
-Was ist die Motivation hinter dieser Arbeit
+Im Kapitel \ref{sec:operationen} wurde im Allgemeinen auf die Operationen in TensorFlow eingegangen. Dies wird nun noch für die Darstellung vertieft. 
 
 \subsection{Vor- und Nachteile von Graphen zur Berechnung}
 \label{sec:vorUndNachteile}
-Was ist die Motivation hinter dieser Arbeit
+Durch die Verwendung von Graphen ist es möglich einzelne Operationen ohne große Umstände auszutauschen.
+
 
 %4.Unterkapitel
 \section{Trainieren des Netzes}
@@ -60,12 +68,13 @@ Insgesamt 1-2 Seiten
 
 \subsection{Eingaben}
 \label{sec:eingaben}
-Was ist die Motivation hinter dieser Arbeit
+Für das Trainieren eines Neuronales Netzes werden, wie auch bei anderen Frameworks Trainingsdaten benötigt.
+Platzhalter werden für die Eingaben verwendet.
+
 
 \subsection{Ablauf}
 \label{sec:ablauf}
-Was ist die Motivation hinter dieser Arbeit
+
 
 \subsection{Ergebnis}
 \label{sec:ergebnis}
-Was ist die Motivation hinter dieser Arbeit
