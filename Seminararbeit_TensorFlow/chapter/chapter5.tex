@@ -5,7 +5,7 @@
 \printsubchapterauthor{\authorMarco}
 Zur Darstellung eines Netzes, welches mithilfe von TensorFlow erstellt und trainiert wurde, soll im Zuge dieser Arbeit einen Demonstrator entwickelt werden. Das gewählte Beispiel ist die Erkennung von handgeschriebenen Ziffern. Dabei sollen vor allem die Effekte unterschiedlicher Lernraten auf die Richtigkeit der Vorhersagen untersucht werden.
 
-Weiterhin wird auf die Nutzung des Brechnungsgraphen eingegangen und aufgezeigt, wie dieser im Demonstrator funktioniert. Dies betrifft ebenfalls die eingesetzten Operatoren und die Transformation der Tensoren.
+Weiterhin wird auf die Nutzung des Berechnungsgraphen eingegangen und aufgezeigt, wie dieser im Demonstrator funktioniert. Dies betrifft ebenfalls die eingesetzten Operatoren und die Transformation der Tensoren.
 
 Im Anschluss wird auf Probleme eingegangen, welche beim Erstellen und Trainieren des Netzes aufgetreten sind.
 
@@ -29,9 +29,9 @@ Das Eingangsarray besitzt eine Länge von 784 Einträgen. Daher muss die Eingabe
 \section{Auswertung}
 \label{sec:auswertung}
 \printsubchapterauthor{\authorMarco}
-Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und validiert. Dabei wurden immer 20.000 der 60.000 Testbilder für eine Trainingssession genutzt. Die untersuchten Lernraten lagen zwischen 0,0001 und 1. Für Lernraten, die kleiner als 0,005 waren, lag die Richtigkeit der erkannten Zahlen bei unter 90\%. Lernraten zwischen 0,08 und 0,5 ergaben die bessten Ergebnisse mit über 92\% Genauigkeit. Bei Lernraten, die über 0,5 hinausgingen, nahm die Ganuigkeit wieder ab. Die beste Genauigkeit wurde bei einer Lernrate von 0,3 erzielt.
+Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und validiert. Dabei wurden immer 20.000 der 60.000 Testbilder für eine Trainingssession genutzt. Die untersuchten Lernraten lagen zwischen 0,0001 und 1. Für Lernraten, die kleiner als 0,005 waren, lag die Richtigkeit der erkannten Zahlen bei unter 90\%. Lernraten zwischen 0,08 und 0,5 ergaben die besten Ergebnisse mit über 92\% Genauigkeit. Bei Lernraten, die über 0,5 hinausgingen, nahm die Genauigkeit wieder ab. Die beste Genauigkeit wurde bei einer Lernrate von 0,3 erzielt.
 
-Faktoren, die diese Ergebnisse beeinflussen, sind allerdings nicht nur die Lernrate. Auch die Anzahl der genutzten Bilder in einer Trainingssession hat einen großen Einfluss auf das Ergebnis, da mehr Bilder zu einer besseren Genauigkeit führen. Weiterhin unterscheiden sich die Genauigkeiten ab einre Lernrate von 0,005 nur um wenige Prozentpunkte.
+Faktoren, die diese Ergebnisse beeinflussen, sind allerdings nicht nur die Lernrate. Auch die Anzahl der genutzten Bilder in einer Trainingssession hat einen großen Einfluss auf das Ergebnis, da mehr Bilder zu einer besseren Genauigkeit führen. Weiterhin unterscheiden sich die Genauigkeiten ab einer Lernrate von 0,005 nur um wenige Prozentpunkte.
 
 Die verschiedenen Gewichtungen bei unterschiedlichen Lernraten geben einen interessanten Einblick darauf, wie das neuronale Netz die Zahlen wahrnimmt.
 \begin{center}
@@ -40,7 +40,7 @@ Die verschiedenen Gewichtungen bei unterschiedlichen Lernraten geben einen inter
 	\label{fig:gewichtung00001}
 \end{center}
 
-Wie in Abbildung \ref{fig:gewichtung00001} zu sehen ist, werden bei einer niedrigen Lernrate die Gewichtungen auf die einzelnen Werte so angepasst, dass die Ziffern in den Bildern für den Menschen klar erkentlich sind. Allerdings ist dieses Vorgehen sehr langsam.
+Wie in Abbildung \ref{fig:gewichtung00001} zu sehen ist, werden bei einer niedrigen Lernrate die Gewichtungen auf die einzelnen Werte so angepasst, dass die Ziffern in den Bildern für den Menschen klar erkenntlich sind. Allerdings ist dieses Vorgehen sehr langsam.
 
 \begin{center}
 	\includegraphics[width=.6\textwidth]{../abbildungen/weightPlot0008.pdf}
@@ -48,7 +48,7 @@ Wie in Abbildung \ref{fig:gewichtung00001} zu sehen ist, werden bei einer niedri
 	\label{fig:gewichtung0008}
 \end{center}
 
-In Abbildung \ref{fig:gewichtung0008} ist eine höhere Lernrate verwendet wurden. Dabei sind die einzelnen Ziffern nicht mehr für den Menschen erkennbar bzw. nur noch zu erraten. Dafür wurde mit dieser Variante eine höhere Genauigkeit erzielt. Generell gilt, je höher die Lernrate ausfällt, destso schlechter sind Ziffern erkennbar.
+In Abbildung \ref{fig:gewichtung0008} ist eine höhere Lernrate verwendet wurden. Dabei sind die einzelnen Ziffern nicht mehr für den Menschen erkennbar bzw. nur noch zu erraten. Dafür wurde mit dieser Variante eine höhere Genauigkeit erzielt. Generell gilt, je höher die Lernrate ausfällt, desto schlechter sind Ziffern erkennbar.
 
 \section{Probleme}
 \label{sec:probleme}
