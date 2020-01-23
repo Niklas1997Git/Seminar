@@ -3,7 +3,7 @@
 \section{Zielsetzung}
 \label{sec:zielsetzung}
 \printsubchapterauthor{\authorMarco}
-Zur Darstellung eines Netzes welches mithilfe von TensorFlow erstellt und trainiert wurde, soll im Zuge dieser Arbeit einen Demonstrator entwickelt werden. Das gewählte Beispiel ist die Erkennung von handgeschriebenen Ziffern. Dabei sollen vor allem die Effekte unterschiedlicher Lernraten auf die Richtigkeit der Vorhersagen untersucht werden.
+Zur Darstellung eines Netzes, welches mithilfe von TensorFlow erstellt und trainiert wurde, soll im Zuge dieser Arbeit einen Demonstrator entwickelt werden. Das gewählte Beispiel ist die Erkennung von handgeschriebenen Ziffern. Dabei sollen vor allem die Effekte unterschiedlicher Lernraten auf die Richtigkeit der Vorhersagen untersucht werden.
 
 Weiterhin wird auf die Nutzung des Brechnungsgraphen eingegangen und aufgezeigt, wie dieser im Demonstrator funktioniert. Dies betrifft ebenfalls die eingesetzten Operatoren und die Transformation der Tensoren.
 
@@ -22,7 +22,9 @@ Der Datensatz, der zum Trainieren und Überprüfen des Netzes genutzt wurde, ist
 \section{Erstellen des Netzes}
 \label{sec:erstellenDesNetzes}
 \printsubchapterauthor{\authorNiklas}
-1-2 Seiten
+Der Datensatz, der für das neuronale Netz genutzt wird besteht aus Bildern mit einer Größe von 28x28 Pixeln. Da dem neuronalen Netz jedes Pixel übergeben werden soll, muss zuerst die Länge des Eingangsarrays berechnet werden.
+\begin{center} 28 * 28 = 784\end{center}
+Das Eingangsarray besitzt eine Länge von 784 Einträgen. Daher muss die Eingabeschicht des neuronalen Netzes ebenfalls 784 Platzhalter besitzen, die diese Werte entgegennehmen. Da es sich bei den handgeschriebenen Zahlen nur um die Zahlen von 0 bis 9, also 10 Zahlen, handelt, benötigt das neuronale Netz eine Ausgangsschicht mit 10 Tensoren. Zur Anpassung der Gewichte wird im Training die Softmax-Regression oder auch logistische Regression verwendet. Nach dem Trainieren wird zu jeder Zahl ein Thumbnail angezeigt, das darstellt, welcher Pixelbereich ungefähr gesetzt sein muss, damit das neuronale Netz diese Zahl in dem Bild interpretiert.
 
 \section{Auswertung}
 \label{sec:auswertung}
@@ -32,4 +34,4 @@ Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und vali
 \section{Probleme}
 \label{sec:probleme}
 \printsubchapterauthor{\authorNiklas}
-1 Seite
+Bei der Erstellung des neuronalen Netzes selbst sind keine großen Problem aufgetreten. Die einzigen Probleme, die auftraten fanden bei der Installation statt. Die einfachste Variante der Installation ist über eine virtuelle Umgebung von Anaconda. In dieser virtuellen Umgebung kann TensorFlow installiert werden, ohne die Python-Installation des Rechners zu verändern. Auf einem Mac ist ein relativ neues Betriebssystem nötig, um TensorFlow nutzen zu können. Das Betriesbssystem \textit{El Capitan} reicht dafür nicht aus. Auf einem Ubuntu 18.04 Rechner müssen nach abgeschlossener Installation manche Bibliotheken einzeln installiert werden. Auf einem Windows-Computer werden alle nötigen Bibliotheken bei der Installation mit installiert und TensorFlow ist nach der Installation einsatzbereit.

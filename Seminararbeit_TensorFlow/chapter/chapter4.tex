@@ -17,10 +17,10 @@ In TensorFlow hingegen werden die Daten, die durch den Graphen fließen Tensoren
 
 Tensoren besitzen in TensorFlow die Attribute Name, Shape und Datentyp. Diese Attribute können bei der Initialisierung gesetzt werden oder sie werden von TensorFlow automatisch hinzugefügt. TensorFlow unterstützt sehr viele Datentypen. Diese sind in der Tabelle Seite 33 zu sehen. Bei der Verwendung von unterschiedlichen Datentypen ist es wichtig eine Typcast zu verwenden, da sonst eine Ausnahme geworfen wird. Das Attribute Shape gibt an, ob es sich bei diesem Tensor um eine Skalar, einen Vektor, eine Matrix oder ein mehrdimensionales Feld handelt. Wenn das Shape-Attribut zum Beispiel die Werte (2, 3) besitzt, kann es für die Matrix $\mathit{[[1, 2, 3], [4, 5, 6]]}$ stehen, da diese aus zwei Zeilen und 3 Spalten besteht.\\
 Da die Eingabeschicht eines Neuronalen Netzes die Eingabedaten anders verarbeitet als die inneren Schichten, besitzt TensorFlow drei unterschiedliche Arten von Tensoren. Für die Eingabeschicht werden die sogenannten Platzhalter genutzt. Bei der Initialisierung muss nur der Datentyp übergeben werden. Die Daten werden bei der Ausführung einer Session über ein "feed-Dictionary"  an die Eingabeschicht übergeben. In den inneren Schichten werden meistens Variablen verwendet, da es möglich sein muss, die Gewichte nach einem Durchlauf korrigieren zu können. Zur Initialisierung der Variablen muss ein Startwert angegeben werden. Außerdem ist es möglich Konstanten zu verwenden, jedoch werde diese oft nur in einfachen Berechnungen verwendet, da deren Werte nicht verändert werden können.
-Bei der Ausführung einer Operation entstehen ebenfalls Objekte von Tensoren, deshalb müssen Operationen einer Variablen zugeordnet werden. Hier ist mit einer Variablen jedoch nicht das gleiche gemeint, wie im Vorherigen beschrieben sondern nur eine einfache Zuordnung. In dem folgendem Beispiel entsteht aus der Addition der beiden Konstanten a und b eine neue Variable c.\\
-\begin{math}
+Bei der Ausführung einer Operation entstehen ebenfalls Objekte von Tensoren, deshalb müssen Operationen einer Variablen zugeordnet werden. Hier ist mit einer Variablen jedoch nicht das gleiche gemeint, wie im Vorherigen beschrieben sondern nur eine einfache Zuordnung. In dem folgendem Beispiel entsteht aus der Addition der beiden Konstanten a und b eine neue Variable c.
+\begin{center}
 a = tf.constant(5)\\ b = tf.constant(4)\\ c = tf.add(a, b)    
-\end{math}
+\end{center}
 
 %2.Unterkapitel
 \section{Operationen}
