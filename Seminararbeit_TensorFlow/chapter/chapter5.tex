@@ -29,7 +29,26 @@ Das Eingangsarray besitzt eine Länge von 784 Einträgen. Daher muss die Eingabe
 \section{Auswertung}
 \label{sec:auswertung}
 \printsubchapterauthor{\authorMarco}
-Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und validiert. Dabei wurden immer 10.000 Iterationen durchlaufen. Die untersuchten Lernraten lagen zwischen 0,0001 und 1. Für kleine Lernraten unter 0,01 war die Genauigkeit gering. Sie lag bei zwischen 75\% und 90\%. Lernraten zwischen 0,05 und 0,2 erreichten Genauigkeiten, die leicht über 90\% lagen. Die höchste Genauigkeit wurde mit einer Lernrate von 0,05 erzielt. Die erreichte  Genauigkeit lag bei 90,56\%.
+Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und validiert. Dabei wurden immer 20.000 der 60.000 Testbilder für eine Trainingssession genutzt. Die untersuchten Lernraten lagen zwischen 0,0001 und 1. Für Lernraten, die kleiner als 0,005 waren, lag die Richtigkeit der erkannten Zahlen bei unter 90\%. Lernraten zwischen 0,08 und 0,5 ergaben die bessten Ergebnisse mit über 92\% Genauigkeit. Bei Lernraten, die über 0,5 hinausgingen, nahm die Ganuigkeit wieder ab. Die beste Genauigkeit wurde bei einer Lernrate von 0,3 erzielt.
+
+Faktoren, die diese Ergebnisse beeinflussen, sind allerdings nicht nur die Lernrate. Auch die Anzahl der genutzten Bilder in einer Trainingssession hat einen großen Einfluss auf das Ergebnis, da mehr Bilder zu einer besseren Genauigkeit führen. Weiterhin unterscheiden sich die Genauigkeiten ab einre Lernrate von 0,005 nur um wenige Prozentpunkte.
+
+Die verschiedenen Gewichtungen bei unterschiedlichen Lernraten geben einen interessanten Einblick darauf, wie das neuronale Netz die Zahlen wahrnimmt.
+\begin{center}
+	\includegraphics[width=.6\textwidth]{../abbildungen/weightPlot00001.pdf}
+	\captionof{figure}{Gewichtungen bei einer Lernrate von 0.0001}
+	\label{fig:gewichtung00001}
+\end{center}
+
+Wie in Abbildung \ref{fig:gewichtung00001} zu sehen ist, werden bei einer niedrigen Lernrate die Gewichtungen auf die einzelnen Werte so angepasst, dass die Ziffern in den Bildern für den Menschen klar erkentlich sind. Allerdings ist dieses Vorgehen sehr langsam.
+
+\begin{center}
+	\includegraphics[width=.6\textwidth]{../abbildungen/weightPlot0008.pdf}
+	\captionof{figure}{Gewichtungen bei einer Lernrate von 0.008}
+	\label{fig:gewichtung0008}
+\end{center}
+
+In Abbildung \ref{fig:gewichtung0008} ist eine höhere Lernrate verwendet wurden. Dabei sind die einzelnen Ziffern nicht mehr für den Menschen erkennbar bzw. nur noch zu erraten. Dafür wurde mit dieser Variante eine höhere Genauigkeit erzielt. Generell gilt, je höher die Lernrate ausfällt, destso schlechter sind Ziffern erkennbar.
 
 \section{Probleme}
 \label{sec:probleme}
