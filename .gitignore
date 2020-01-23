@@ -276,6 +276,6 @@ TSWLatexianTemp*
 *.lpz
 
 
-*.pdf
+/Seminararbeit_TensorFlow/thesis.pdf
 /MNIST_data/*
 /.ipynb_checkpoints/*
