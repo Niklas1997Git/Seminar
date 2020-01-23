@@ -56,12 +56,14 @@ Vor der Ausführung eines \textit{Session}-Blocks enthalten die wird durch das A
 
 \subsection{Darstellung von Operationen}
 \label{sec:darstellungOperationen}
-Im Kapitel \ref{sec:operationen} wurde im Allgemeinen auf die Operationen in TensorFlow eingegangen. Dies wird nun noch für die Darstellung vertieft. 
+Im Kapitel \ref{sec:operationen} wurde im Allgemeinen auf die Operationen in TensorFlow eingegangen. Dies wird nun noch für die Darstellung vertieft. Operationen werden in TensorFlow durch Knoten dargestellt. Diese Knoten werden im Tensorboard durch Ellipsen visualisiert. Diese Ellipsen besitzen meistens mehrere Tensoren, die zu ihnen führen und als Eingangswerte dienen. Aus der Ellipse hinaus führt häufig nur ein Tensor, der entweder weiterverwendet wird oder als Ergebnis des Graphen dient. 
+
 
 \subsection{Vor- und Nachteile von Graphen zur Berechnung}
 \label{sec:vorUndNachteile}
 Durch die Verwendung von Graphen ist es möglich einzelne Operationen ohne große Umstände austauschen zu können und die jeweiligen Auswirkungen direkt testen zu können. Ein weiterer großer Vorteil des Datenflussgraphen ist die Festellung der Abhängigkeiten zwischen den einzelnen Berechnungen des Graphen. Durch diese Abhängigkeiten ist es möglich den Graphen in Untergraphen zu unterteilen und auf unterschiedlichen Recheneinheiten ausführen zu lassen. 
 
+Bei der Arbeit mit Datenflussgraphen in TensorFlow entstehen keine großen Nachteile. Der einzige Nachteil besteht in der Einarbeitung, diese fällt am Anfang im Vergleich zu andreren Frameworks schwerer.
 
 %4.Unterkapitel
 \section{Trainieren des Netzes}
