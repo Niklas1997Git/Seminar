@@ -3,7 +3,7 @@
 \section{Zielsetzung}
 \label{sec:zielsetzung}
 \printsubchapterauthor{\authorMarco}
-Zur Darstellung eines Netzes welches mithilfe von TensorFlow erstellt und trainiert wurde, soll im Zuge dieser Arbeit einen Demonstrator entwickelt werden. Das von gewählte Beispiel ist die Erkennung von handgeschriebenen Ziffern. Dabei sollen vor allem die Effekte unterschiedlicher Lernraten auf die Richtigkeit der Vorhersagen untersucht werden.
+Zur Darstellung eines Netzes welches mithilfe von TensorFlow erstellt und trainiert wurde, soll im Zuge dieser Arbeit einen Demonstrator entwickelt werden. Das gewählte Beispiel ist die Erkennung von handgeschriebenen Ziffern. Dabei sollen vor allem die Effekte unterschiedlicher Lernraten auf die Richtigkeit der Vorhersagen untersucht werden.
 
 Weiterhin wird auf die Nutzung des Brechnungsgraphen eingegangen und aufgezeigt, wie dieser im Demonstrator funktioniert. Dies betrifft ebenfalls die eingesetzten Operatoren und die Transformation der Tensoren.
 
@@ -17,16 +17,17 @@ Im Anschluss wird auf Probleme eingegangen, welche beim Erstellen und Trainieren
 \section{Datensätze}
 \label{sec:datensaetze}
 \printsubchapterauthor{\authorMarco}
-Der Datensatz, den wir zum Trainieren und Überprüfen des Netzes genutzt haben, ist der MNIST Datensatz. Dieser Datensatz wurde von dem National Institute of Standards and Technology angefertigt und besteht aus 60.000 Trainingsziffern und 10.000 Testziffern. Alle Zahlen sind handgeschrieben und auf eine größe von 28x28 Pixeln gespeichert. Die einzelnen Ziffern weisen verschiedene Graustufen in ihrer Darstellung auf.
+Der Datensatz, der zum Trainieren und Überprüfen des Netzes genutzt wurde, ist der MNIST Datensatz. Dieser Datensatz wurde von dem National Institute of Standards and Technology angefertigt und besteht aus 60.000 Trainingsziffern und 10.000 Testziffern. Alle Zahlen sind handgeschrieben und auf eine Größe von 28x28 Pixeln verkleinert. Die einzelnen Ziffern weisen verschiedene Graustufen in ihrer Darstellung auf.
 
 \section{Erstellen des Netzes}
 \label{sec:erstellenDesNetzes}
 \printsubchapterauthor{\authorNiklas}
 1-2 Seiten
 
-\section{Ergebnisse auswerten}
-\label{sec:ergebnisseAuswerten}
+\section{Auswertung}
+\label{sec:auswertung}
 \printsubchapterauthor{\authorMarco}
+Das Netz wurde nach dem Erstellen mit verschiedenen Lernraten trainiert und validiert. Dabei wurden immer 10.000 Iterationen durchlaufen. Die untersuchten Lernraten lagen zwischen 0,0001 und 1. Für kleine Lernraten unter 0,01 war die Genauigkeit gering. Sie lag bei zwischen 75\% und 90\%. Lernraten zwischen 0,05 und 0,2 erreichten Genauigkeiten, die leicht über 90\% lagen. Die höchste Genauigkeit wurde mit einer Lernrate von 0,05 erzielt. Die erreichte  Genauigkeit lag bei 90,56\%.
 
 \section{Probleme}
 \label{sec:probleme}
