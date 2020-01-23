@@ -49,14 +49,14 @@ Insgesamt 3 Seiten
 \subsection{Aufbau}
 \label{sec:graphenAufbau}
 
-Wie schon in Kapitel \ref{sec:allgemeines} erwähnt wurde, arbeitet TensorFlow auf einem Datenflussgraphen. Dabei handelt es sich um ein gerichtetes Diagramm, das ein mathematisches Problem darstellt. Diese Datenflussgraphen bestehen aus Tensoren \ref{sec:tensoren} und Operationen \ref{sec:operationen}, die miteinander verbunden sind. Durch eine Aneinanderreihung von unterschiedlichen Operationen, mit den dazugehörigen Tensoren als Werte, entsteht ein Datenflussgraph. Dieser wird als mathematische Grundlage für das Neuronale Netz genutzt.
+Wie schon in Kapitel \ref{sec:allgemeines} erwähnt, arbeitet TensorFlow auf einem Datenflussgraphen. Dabei handelt es sich um ein gerichtetes Diagramm, das ein mathematisches Problem darstellt. Diese Datenflussgraphen bestehen aus Tensoren \ref{sec:tensoren} und Operationen \ref{sec:operationen}, die miteinander verbunden sind. Dabei werden die Operationen als Knoten und die Tensoren als Kanten dargestellt. Durch eine Aneinanderreihung von unterschiedlichen Operationen, mit den dazugehörigen Tensoren als Werte, entsteht ein Datenflussgraph. Dieser wird als mathematische Grundlage für ein Neuronales Netz oder für einfache Berechnungen genutzt.
 
 \subsection{Funktionsweise}
 \label{sec:graphenFunktionsweise}
 Hier Bild 5.11 aus dem Buch Deep-Learning einfügen.\\
 Die Abbildung zeigt eine einfache Berechnung als Datenflussgraphen, um den Ablauf zu verdeutlichen. Die Berechnung eines Graphen kann nur in einem \textit{tf.Session()}-Block ausgeführt werden. Am Anfang dieses Blocks wird zusätzlich eine \textit{tf.Session()} Variable angelegt. Dies wird durch den Ausdruck \textit{with tf.Session() as sess} realisiert. Das \textit{Session()}-Objekt wird später benötigt, um diese zu starten. Bevor die \textit{Session} gestartet wird, werden die Konstanten, oder auch Tensoren, a, b, c und d erstellt und ein Wert zugewiesen. Die letzte Operation wurde dem Tensor \textit{result} in der Form \textit{result = tf.sqrt(x3, "Wurzel")} zugewiesen. Für den Start muss der Operation der Tensor übergeben werden, der berechnet werden soll. Diese Operation muss zusätzlich einer Variablen übergeben werden, damit der Wert weiter verwendet werden kann. In diesem Fall sieht die Funktion wie folgt aus: \textit{res = sess.run(result)}. Über die Variable \textit{res} kann nun das Ergebnis ausgegeben werden.
 
-Hier Bild 3-4 aus Buch EInfuehrung einfügen
+Hier Bild 3-4 aus Buch Einfuehrung einfügen
 Vor der Ausführung eines \textit{Session}-Blocks enthalten die wird durch das Aufrufen einer Operation nur eine Instanz dieses Objekts erstellt. Dieses Objekt enthält nur Referenz der Daten und noch keine richtigen Daten. Dies ändert sich mit dem Start der Ausführung und dem Durchlaufen der Operationen. Wie in der Abbildung zu sehen ist werden die Referenzen der Tensor-Objekte in A durch Tensor-Objekt-Instanzen ersetzt.
 
 \subsection{Darstellung von Operationen}
@@ -65,7 +65,7 @@ Im Kapitel \ref{sec:operationen} wurde im Allgemeinen auf die Operationen in Ten
 
 \subsection{Vor- und Nachteile von Graphen zur Berechnung}
 \label{sec:vorUndNachteile}
-Durch die Verwendung von Graphen ist es möglich einzelne Operationen ohne große Umstände auszutauschen.
+Durch die Verwendung von Graphen ist es möglich einzelne Operationen ohne große Umstände austauschen zu können und die jeweiligen Auswirkungen direkt testen zu können. Ein weiterer großer Vorteil des Datenflussgraphen ist die Festellung der Abhängigkeiten zwischen den einzelnen Berechnungen des Graphen. Durch diese Abhängigkeiten ist es möglich den Graphen in Untergraphen zu unterteilen und auf unterschiedlichen Recheneinheiten ausführen zu lassen. 
 
 
 %4.Unterkapitel
