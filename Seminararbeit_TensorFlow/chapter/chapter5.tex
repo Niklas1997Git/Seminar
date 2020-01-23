@@ -9,11 +9,6 @@ Weiterhin wird auf die Nutzung des Brechnungsgraphen eingegangen und aufgezeigt,
 
 Im Anschluss wird auf Probleme eingegangen, welche beim Erstellen und Trainieren des Netzes aufgetreten sind.
 
-\section{Planung}
-\label{sec:planung}
-\printsubchapterauthor{\authorNiklas}
-1 Seite
-
 \section{Datensätze}
 \label{sec:datensaetze}
 \printsubchapterauthor{\authorMarco}
@@ -24,7 +19,7 @@ Der Datensatz, der zum Trainieren und Überprüfen des Netzes genutzt wurde, ist
 \printsubchapterauthor{\authorNiklas}
 Der Datensatz, der für das neuronale Netz genutzt wird besteht aus Bildern mit einer Größe von 28x28 Pixeln. Da dem neuronalen Netz jedes Pixel übergeben werden soll, muss zuerst die Länge des Eingangsarrays berechnet werden.
 \begin{center} 28 * 28 = 784\end{center}
-Das Eingangsarray besitzt eine Länge von 784 Einträgen. Daher muss die Eingabeschicht des neuronalen Netzes ebenfalls 784 Platzhalter besitzen, die diese Werte entgegennehmen. Da es sich bei den handgeschriebenen Zahlen nur um die Zahlen von 0 bis 9, also 10 Zahlen, handelt, benötigt das neuronale Netz eine Ausgangsschicht mit 10 Tensoren. Zur Anpassung der Gewichte wird im Training die Softmax-Regression oder auch logistische Regression verwendet. Nach dem Trainieren wird zu jeder Zahl ein Thumbnail angezeigt, das darstellt, welcher Pixelbereich ungefähr gesetzt sein muss, damit das neuronale Netz diese Zahl in dem Bild interpretiert.
+Das Eingangsarray besitzt eine Länge von 784 Einträgen. Daher muss die Eingabeschicht des neuronalen Netzes ebenfalls 784 Platzhalter besitzen, die diese Werte entgegennehmen. Da es sich bei den handgeschriebenen Zahlen nur um die Zahlen von 0 bis 9, also 10 Zahlen, handelt, benötigt das neuronale Netz eine Ausgangsschicht mit 10 Tensoren. Zur Anpassung der Gewichte wird im Training die Softmax-Regression oder auch logistische Regression verwendet. Nach dem Trainieren wird zu jeder Zahl ein Thumbnail angezeigt, das darstellt, welcher Pixelbereich ungefähr gesetzt sein muss, damit das neuronale Netz diese Zahl in dem Bild interpretiert. Der Code des gesamten neuronalen Netzes ist im Anhang \ref{sec:codeDemonstrator} zu finden.
 
 \section{Auswertung}
 \label{sec:auswertung}
