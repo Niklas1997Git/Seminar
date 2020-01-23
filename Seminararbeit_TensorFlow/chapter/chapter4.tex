@@ -13,21 +13,18 @@ Ein Tensor ist eine Bezeichnung für ein n-dimensionales Feld. In der Abbildung 
 
 \subsection{Tensoren in TensorFlow}
 \label{sec:tensorenInTensorflow}
-In TensorFlow hingegen werden die Daten, die durch den Graphen fließen Tensoren genannt. Da diese Daten wie die Tensoren in der Mathematik verschiedene Dimensionen annehmen können, wie zum Beispiel einfache Zahlenwerte oder dreidimensionale Felder eines Bildes, basiert der Begriff auf dem mathematischen Begriff.
+In TensorFlow hingegen werden die Daten, die durch den Graphen fließen Tensoren genannt. Da diese Daten wie die Tensoren in der Mathematik verschiedene Dimensionen annehmen können, wie zum Beispiel einfache Zahlenwerte oder dreidimensionale Felder eines Bildes, basiert der Begriff auf dem mathematischen Begriff. \\
 
-Tensor-Objekte entstehen bei der Ausführung einer Operation. 
-Angeben des Datentyps beim Anlegen\\
-Ggf. Typcast\\
-Shape gibt die Dimension des Tensors an\\
+Tensoren besitzen in TensorFlow die Attribute Name, Shape und Datentyp. Diese Attribute können bei der Initialisierung gesetzt werden oder sie werden von TensorFlow automatisch hinzugefügt. TensorFlow unterstützt sehr viele Datentypen. Diese sind in der Tabelle Seite 33 zu sehen. Bei der Verwendung von unterschiedlichen Datentypen ist es wichtig eine Typcast zu verwenden, da sonst eine Ausnahme geworfen wird. Das Attribute Shape gibt an, ob es sich bei diesem Tensor um eine Skalar, einen Vektor, eine Matrix oder ein mehrdimensionales Feld handelt. Wenn das Shape-Attribut zum Beispiel die Werte (2, 3) besitzt, kann es für die Matrix $\mathit{[[1, 2, 3], [4, 5, 6]]}$ stehen, da diese aus zwei Zeilen und 3 Spalten besteht.\\
+Da die Eingabeschicht eines Neuronalen Netzes die Eingabedaten anders verarbeitet als die inneren Schichten, besitzt TensorFlow drei unterschiedliche Arten von Tensoren. Für die Eingabeschicht werden die sogenannten Platzhalter genutzt. Bei der Initialisierung muss nur der Datentyp übergeben werden. Die Daten werden bei der Ausführung einer Session über ein "feed-Dictionary"  an die Eingabeschicht übergeben. In den inneren Schichten werden meistens Variablen verwendet, da es möglich sein muss, die Gewichte nach einem Durchlauf korrigieren zu können. Zur Initialisierung der Variablen muss ein Startwert angegeben werden. Außerdem ist es möglich Konstanten zu verwenden, jedoch werde diese oft nur in einfachen Berechnungen verwendet, da deren Werte nicht verändert werden können.
+Bei der Ausführung einer Operation entstehen ebenfalls Objekte von Tensoren, deshalb müssen Operationen einer Variablen zugeordnet werden. Hier ist mit einer Variablen jedoch nicht das gleiche gemeint, wie im Vorherigen beschrieben sondern nur eine einfache Zuordnung. In dem folgendem Beispiel entsteht aus der Addition der beiden Konstanten a und b eine neue Variable c.\\
+\begin{math}
+a = tf.constant(5)\\ b = tf.constant(4)\\ c = tf.add(a, b)    
+\end{math}
+
+Tensor-Objekte entstehen bei der Ausführung einer Operation.
 
 
-Variablen\\
-
-
-Platzhalter\\
-leere Variablen, später mit Daten gefüllt\\
-Größe der Platzhalter sollte angegeben werden\\
-In Session().run werden Eingabedaten als Dictionary übergeben. Jeder Schlüssel entspricht dabei einem Variablennamen\\
 
 %2.Unterkapitel
 \section{Operationen}
@@ -80,13 +77,18 @@ Insgesamt 1-2 Seiten
 
 \subsection{Eingaben}
 \label{sec:eingaben}
-Für das Trainieren eines Neuronales Netzes werden, wie auch bei anderen Frameworks Trainingsdaten benötigt.
-Platzhalter werden für die Eingaben verwendet.
-
+Für das Trainieren eines Neuronales Netzes werden, wie auch bei anderen Frameworks Trainingsdaten benötigt.\\
+Platzhalter werden für die Eingaben verwendet.\\
+Menge an Eingabedaten, wie es auch Platzhalter in der ersten Schicht gibt.\\
+Aufteilen der Daten in Trainings- und Testdaten zur Überprüfung des Modells\\
 
 \subsection{Ablauf}
 \label{sec:ablauf}
-
+Starten der Session\\
+Initialisierung der Gewichte und Zuweisung der Daten oder Tensor-Objekte der Platzhalter\\
+Anwendung eines Trainierungsverfahrens, wie Backpropagation\\
+Durchlaufen der angegebenen Trainingsepochen\\
 
 \subsection{Ergebnis}
 \label{sec:ergebnis}
+Nach Abschluss des Trainings ist ein trainiertes Neuronales Netz vorhanden\\
