@@ -2,9 +2,6 @@
 \label{chap:tensorflow}
 \chapterauthor{\authorNiklas}
 
-Worum geht es in Ihrer Arbeit \citep{Einfuehrung}
-Insgesamt 2 Seiten
-
 \section{Allgemeines}
 \label{sec:allgemeines}
 "Die Daten fließen als Tensoren durch einen Graphen von Rechenoperationen, aus denen unser Deep-Learning-Netz besteht." \citep{Einfuehrung}\\
@@ -25,14 +22,13 @@ Modell für einzelnen Prozessor kann durch wenige Änderungen
 auf Prozessorclustern laufen\\
 Spezielle Tensor Processing Units von Google\\
 Wird ständig verbessert in den Bereichen Benutzerfreundlichkeit, Leistungsfähigkeit und Nützlichkeit\\
-Graph kann in mehrere Abscnitte aufgeteilt werden für unterschiedliche CPU'S/GPU'S\\
+Graph kann in mehrere Abschnitte aufgeteilt werden für unterschiedliche CPU'S/GPU'S\\
 2015 November veröffentlicht\\
 Python-API(TF.Learn)Scikit-Learn kompatibel\\
 TF-Slim vereinfacht Aufbau Training und Evaluierung\\
 C++ Schnittstelle zur Definition von Operationen\\
 Tensorboard für die Visualisierung\\
-Hier wird auf die Textstelle \ref{sec:tensoren} verwiesen, die
-sich auf der Seite \pageref{sec:tensoren} befindet.
 
 \section{Unterschiede zu anderen Frameworks}
 \label{sec:unterschiede}
+TensorFlow besitzt gegenüber anderen Frameworks den Vorteil, das neuronale Netzwerk in kleinere Abschnitte zu unterteilen. Dies ist möglich da TensorFlow mit einem Datenflussgraphen arbeiten. Dieser Graph kann, wenn es möglich ist aufgeteilt werden. Dies wird in dem Kapitel \ref{sec:vorUndNachteile} weiter beschrieben. EIne weitere Steigerung der Rechenleistung bietet Google durch spezielle Recheneinheiten, die nur für TensorFlow entwickelt wurde. Die sogenannten \textit{TensorFlow Processing Units} Außerdem besitzt TensorFlow die Möglichkeit seine Graphen zu visualisieren und dadurch die Fehlersuche deutlich zu verbessern. Diese Visualisierung nennt sich Tensorboard. Die graphische Darstellung wird in dem Kapitel \ref{sec:aufbau} beschrieben.
