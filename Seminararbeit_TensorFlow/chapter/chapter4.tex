@@ -4,7 +4,6 @@
 \section{Tensoren}
 \label{sec:tensoren}
 \printsubchapterauthor{\authorNiklas}
-Insgesamt 1-2 Seiten
 
 \subsection{Mathematische Definition}
 \label{sec:mathematischeDefinition}
@@ -40,8 +39,6 @@ Was ist die Motivation hinter dieser Arbeit
 \section{Graphen}
 \label{sec:graphen}
 \printsubchapterauthor{\authorNiklas}
-Insgesamt 3 Seiten
-
 \subsection{Aufbau}
 \label{sec:graphenAufbau}
 Wie schon in Kapitel \ref{sec:allgemeines} erwähnt, arbeitet TensorFlow auf einem Datenflussgraphen. Dabei handelt es sich um ein gerichtetes Diagramm, das ein mathematisches Problem darstellt. Diese Datenflussgraphen bestehen aus Tensoren \ref{sec:tensoren} und Operationen \ref{sec:operationen}, die miteinander verbunden sind. Dabei werden die Operationen als Knoten und die Tensoren als Kanten dargestellt. Durch eine Aneinanderreihung von unterschiedlichen Operationen, mit den dazugehörigen Tensoren als Werte, entsteht ein Datenflussgraph. Dieser wird als mathematische Grundlage für ein Neuronales Netz oder für einfache Berechnungen genutzt.
@@ -69,7 +66,6 @@ Bei der Arbeit mit Datenflussgraphen in TensorFlow entstehen keine großen Nacht
 \section{Trainieren des Netzes}
 \label{sec:trainierenDesNetzes}
 \printsubchapterauthor{\authorNiklas}
-Insgesamt 1-2 Seiten
 \subsection{Eingaben}
 \label{sec:eingaben}
 Für das Trainieren eines Neuronales Netzes werden, wie auch bei anderen Frameworks Trainingsdaten benötigt. Diese Trainingsdaten werden häufig im Verhältnis 80:20 in Trainings- und Testdaten aufgeteilt, da nicht die Trainingsdaten ebnfalls für das Testen verwendet werden sollten. In TensorFlow werden spezielle Tensoren, die Platzhalter (Kapitel \ref{sec:tensorenInTensorflow}), für die Eingabeschicht verwendet. Diesen Tensoren werden durch ein feed-Dictionary Werte übergeben. Dabei kann es sich zum Beispiel um Pixelwerte eines Bildes handeln. Die Dimension der Eingabewerte muss dabei mit der Dimension der Eingabeschicht übereinstimmen. 
@@ -81,6 +77,4 @@ Der Ablasuf eines Trainings verläuft ähnlich, wie in Kapitel \ref{sec:graphenF
 \subsection{Ergebnis}
 \label{sec:ergebnis}
 Nach Abschluss des Trainings liegt ein trainiertes Neuronales Netz vor. Um die Korrektheit des Neuronalen Netzes zu überprüfen, kann der Testdatensatz genutzt werden. Die Daten des Testdatensatzes werden dem Neuronalen Netzwerk übergeben, wie die Trainingsdaten. Die Testdaten durchlaufen ebenfalls das neuronale Netz, jeddoch findet beim Testen keine Berechnung der Differenz und Fehlerrückführung statt. Der Nutzer kann dabei nur überprüfen, ob die Ausgabe dem SOLL-Wert entspricht. 
-
-Verwendung des Modells
 
