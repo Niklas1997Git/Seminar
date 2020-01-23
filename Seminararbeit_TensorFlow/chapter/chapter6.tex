@@ -1,14 +1,14 @@
 \chapter{Fazit}
 \label{chap:fazit}
 \chapterauthor{\authorNiklas}
-Insgesamt 1-2 Seiten
 %1.Unterkapitel
 \section{Vor- und Nachteile von TensorFlow}
 \label{sec:vorUndNachteileTensorFlow}
+Zusammenfassend lässt sich festhalten, dass TensorFlow, bis auf die anfänglichen Schwierigkeiten bei Erlenen des Umgangs mit einem Datenflussgraphen, nur Vorteile bietet. Durch die Verwendung eines Datenflussgraphen lässt sich der Graph in kleinere Graphen unterteilen und ermöglicht eine Ausführung auf mehreren Recheneinheiten. Bei diesen Recheneinheiten kann es sich um CPU's, GPU's oder die genannten TPU's handeln. Der Datenflussgraph bringt zusätzlich Flexibilität mit sich, sodass dieser leicht zu erstellen und anzupassen ist. Dies wird durch weitere Abstraktionbiblotheken, wie Keras unterstützt. Das Tensorboard als Visualisierungsmöglichkeit macht es dem Benutzer einfacher den Ablauf zu verstehen und mögliche Fehler zu finden. TensorFlow ist vorallem durch seine hohe Portierbarkeit sehr interessant, da es fast auf allen Geräten verwendet werden kann. Auch aus diesem Grund wird TensorFlow dauerhaft weiterentwickelt und verbessert. 
 
-%1.Unterkapitel
+%2.Unterkapitel
 \section{Ausblick}
 \label{sec:ausblick}
-
 \subsection{TensorFlow Lite}
 \label{sec:tensorFlowLite}
+Damit TensorFlow auch für andere Geräte verwendet wird, bietet das Framework zusätzliche Schnittstellen wie TensorFlow Lite für Mobilgeräte und TensorFlow.js für Browseranwendungen. TensorFlow Lite besteht aus zwei Hauptkomponenten. Einem TensorFlow Lite Konverter, der die TensorFlow Modelle verkleinert, sodass sie trotzdem noch effizient nutzbar sind. Die zweite Hauptkomonente ist der TensorFlow Lite Interpreter, der das umgewandelte Modell auf mobilen, eingebetten und IoT-Geräten ausführen kann. 
