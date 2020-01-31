@@ -1,0 +1,29 @@
+Agenda
+Neuronale Netze						1-2 min		M
+TensorFlow allgemein/Einführung				3-4		N
+	Version 1.0/2.0
+		Unterschiede
+Mathematische Tensoren					1-2		M
+TensorFlow Tensoren					1		N
+Graphen							3-4		M
+	Nodes						
+		Operationen
+	Kanten
+Unterschiede zu anderen Frameworks			1		N
+Trainieren eines neuronalen Netzes (kurz)		1		M
+Praktisches Beispiel					12-15
+	Zielsetzung					1		M
+	Genutzte Version mit Begründung		1			M
+	Datensätze				1			M
+	Erstellen des Netzes			6-8			N
+		Auf Code eingehen
+	Auswertung				2-3			M
+	Probleme				1			N
+Andere Versionen					2-3		M
+	TensorFlow Lite
+Fazit							2-3		N
+
+
+Gesamt							27-36
+
+M	12-17	N	14-18
