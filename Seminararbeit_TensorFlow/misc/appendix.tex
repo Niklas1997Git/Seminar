@@ -115,3 +115,28 @@ def display_compare(num):
 
 display_compare(ran.randint(0, 55000))
 \end{lstlisting}
+
+
+\subsection{Code des Beispielgraphen}
+\label{sec:codeBeispielGraph}
+\begin{lstlisting}
+import tensorflow as tf
+import numpy as np
+
+#Initialisieren der Variablen
+a = tf.Variable(3.0, name = "Variable_a")
+b = tf.Variable(4.0, name = "Variable_b")
+c = tf.Variable(1.0, name = "Variable_c")
+d = tf.Variable(2.0, name = "Variable_d")
+
+x_1 = tf.multiply(a, b, "Multiplikation")
+x_2 = tf.add(c, d, "Addieren")
+x_3 = tf.substract(x_1, x_2, "Substrahieren")
+result = tf.sqrt(x_3, "Wurzel")
+
+with tf.Session() as sess:
+	tf.global_variables_initializer()
+	sess.run(init)
+	res = sess.run(result)
+	print("Ergebnis der Berechnung des Graphen:" , res)
+\end{lstlisting}
