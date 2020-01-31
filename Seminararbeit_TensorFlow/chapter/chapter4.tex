@@ -9,24 +9,24 @@
 \label{sec:mathematischeDefinition}
 \begin{center}
 \includegraphics[width=.6\textwidth]{../abbildungen/5-9.pdf}
-	\captionof{figure}{verschiedene Tensoren und ihre Anwendungsbereiche}
+	\captionof{figure}{Verschiedene Tensoren und ihre Anwendungsbereiche (vgl.\citep{DeepLearning}, S.136)}
 	\label{fig:tensoren}
 \end{center}
 
-Ein Tensor ist eine Bezeichnung für ein n-dimensionales Feld. In der Abbildung sind unterschiedliche Dimensionen von Feldern dargestellt. "Beispielsweise ist ein 1-x-1-Tensor ein Skalar, ein 1-x-n-Tensor ein Vektor, ein n-x-n-Tensor eine Matrix, und ein n-x-n-x-n-Tensor ist einfach ein dreidimensionales Feld"\citep{Einfuehrung}.
+Ein Tensor ist eine Bezeichnung für ein n-dimensionales Feld. In der Abbildung \ref{fig:tensoren} sind unterschiedliche Dimensionen von Feldern dargestellt. Tensoren können von einem einfachen Skalar bis zu merhdimensionalen Feldern reichen.\citep{Einfuehrung}
 
 \subsection{Tensoren in TensorFlow}
 \label{sec:tensorenInTensorflow}
 In TensorFlow hingegen werden die Daten, die durch den Graphen fließen Tensoren genannt. Da diese Daten wie die Tensoren in der Mathematik verschiedene Dimensionen annehmen können, wie zum Beispiel einfache Zahlenwerte oder dreidimensionale Felder eines Bildes, basiert der Begriff auf dem mathematischen Begriff. 
 
-Tensoren besitzen in TensorFlow die Attribute Name, Shape und Datentyp. Diese Attribute können bei der Initialisierung gesetzt werden oder sie werden von TensorFlow automatisch hinzugefügt. TensorFlow unterstützt sehr viele Datentypen. Diese sind in der folgenden Tabelle zusehen.\\
+Tensoren besitzen in TensorFlow die Attribute Name, Shape und Datentyp. Diese Attribute können bei der Initialisierung gesetzt werden oder sie werden von TensorFlow automatisch hinzugefügt. TensorFlow unterstützt sehr viele Datentypen. Diese sind in der Tabelle \ref{fig:datentypenTabelle} zu sehen.\\
 \begin{center}
 \includegraphics[width=.6\textwidth]{../abbildungen/Tabelle3-2.pdf}
-	\captionof{figure}{Beispiel eines Datenflussgraphs}
-	\label{fig:beispielGraph}
+	\captionof{figure}{Tabelle der TensorFlow Datentypen (vgl.\citep{Einfuehrung}, S.33)}
+	\label{fig:datentypenTabelle}
 \end{center}
 Bei der Verwendung von unterschiedlichen Datentypen ist es wichtig eine Typcast zu verwenden, da sonst eine Ausnahme geworfen wird. Das Attribute Shape gibt an, ob es sich bei diesem Tensor um eine Skalar, einen Vektor, eine Matrix oder ein mehrdimensionales Feld handelt. Wenn das Shape-Attribut zum Beispiel die Werte (2, 3) besitzt, kann es für die Matrix $\mathit{[[1, 2, 3], [4, 5, 6]]}$ stehen, da diese aus zwei Zeilen und 3 Spalten besteht.\\
-Da die Eingabeschicht eines Neuronalen Netzes die Eingabedaten anders verarbeitet als die inneren Schichten, besitzt TensorFlow drei unterschiedliche Arten von Tensoren. Für die Eingabeschicht werden die sogenannten Platzhalter genutzt. Bei der Initialisierung muss nur der Datentyp übergeben werden. Die Daten werden bei der Ausführung einer Session über ein "feed-Dictionary"  an die Eingabeschicht übergeben. In den inneren Schichten werden meistens Variablen verwendet, da es möglich sein muss, die Gewichte nach einem Durchlauf korrigieren zu können. Zur Initialisierung der Variablen muss ein Startwert angegeben werden. Außerdem ist es möglich Konstanten zu verwenden, jedoch werde diese oft nur in einfachen Berechnungen verwendet, da deren Werte nicht verändert werden können.
+Da die Eingabeschicht eines Neuronalen Netzes die Eingabedaten anders verarbeitet als die inneren Schichten, besitzt TensorFlow drei unterschiedliche Arten von Tensoren. Für die Eingabeschicht werden die sogenannten Platzhalter genutzt. Bei der Initialisierung muss nur der Datentyp übergeben werden. Die Daten werden bei der Ausführung einer Session über ein 'feed-dictionary'  an die Eingabeschicht übergeben. In den inneren Schichten werden meistens Variablen verwendet, da es möglich sein muss, die Gewichte nach einem Durchlauf korrigieren zu können. Zur Initialisierung der Variablen muss ein Startwert angegeben werden. Außerdem ist es möglich Konstanten zu verwenden, jedoch werde diese oft nur in einfachen Berechnungen verwendet, da deren Werte nicht verändert werden können.
 Bei der Ausführung einer Operation entstehen ebenfalls Objekte von Tensoren, deshalb müssen Operationen einer Variablen zugeordnet werden. Hier ist mit einer Variablen jedoch nicht das gleiche gemeint, wie im Vorherigen beschrieben sondern nur eine einfache Zuordnung. In dem folgendem Beispiel entsteht aus der Addition der beiden Konstanten a und b eine neue Variable c.
 \begin{center}
 a = tf.constant(5)\\ b = tf.constant(4)\\ c = tf.add(a, b)    
@@ -50,17 +50,17 @@ Wie schon in Kapitel \ref{sec:allgemeines} erwähnt, arbeitet TensorFlow auf ein
 \label{sec:graphenFunktionsweise}
 \begin{center}
 \includegraphics[width=.6\textwidth]{../abbildungen/5-11.pdf}
-	\captionof{figure}{Beispiel eines Datenflussgraphs}
+	\captionof{figure}{Beispiel eines Datenflussgraphs (vgl.\citep{DeepLearning}, S.142)}
 	\label{fig:beispielGraph}
 \end{center}
-Die Abbildung zeigt eine einfache Berechnung als Datenflussgraphen, um den Ablauf zu verdeutlichen. Die Berechnung eines Graphen kann nur in einem \textit{tf.Session()}-Block ausgeführt werden. Am Anfang dieses Blocks wird zusätzlich eine \textit{tf.Session()} Variable angelegt. Dies wird durch den Ausdruck \textit{with tf.Session() as sess} realisiert. Das \textit{Session()}-Objekt wird später benötigt, um diese zu starten. Bevor die \textit{Session} gestartet wird, werden die Konstanten, oder auch Tensoren, a, b, c und d erstellt und ein Wert zugewiesen. Die letzte Operation wurde dem Tensor \textit{result} in der Form \textit{result = tf.sqrt(x3, "Wurzel")} zugewiesen. Für den Start muss der Operation der Tensor übergeben werden, der berechnet werden soll. Diese Operation muss zusätzlich einer Variablen übergeben werden, damit der Wert weiter verwendet werden kann. In diesem Fall sieht die Funktion wie folgt aus: \textit{res = sess.run(result)}. Über die Variable \textit{res} kann nun das Ergebnis ausgegeben werden. In diesen Beispiel wurden nur die TensorFlow-Konstanten verwendet. Auf die Benutzung von Variablen und Platzhaltern wird in dem Kapitel \ref{sec:ablauf} weiter eingegangen.
+Die Abbildung \ref{fig:beispielGraph} zeigt eine einfache Berechnung als Datenflussgraphen, um den Ablauf zu verdeutlichen. Die Berechnung eines Graphen kann nur in einem \textit{tf.Session()}-Block ausgeführt werden. Am Anfang dieses Blocks wird zusätzlich eine \textit{tf.Session()} Variable angelegt. Dies wird durch den Ausdruck \textit{with tf.Session() as sess} realisiert. Das \textit{Session()}-Objekt wird später benötigt, um diese zu starten. Bevor die \textit{Session} gestartet wird, werden die Konstanten, oder auch Tensoren, a, b, c und d erstellt und ein Wert zugewiesen. Die letzte Operation wurde dem Tensor \textit{result} in der Form \textit{result = tf.sqrt(x3, "Wurzel")} zugewiesen. Für den Start muss der Operation der Tensor übergeben werden, der berechnet werden soll. Diese Operation muss zusätzlich einer Variablen übergeben werden, damit der Wert weiter verwendet werden kann. In diesem Fall sieht die Funktion wie folgt aus: \textit{res = sess.run(result)}. Über die Variable \textit{res} kann nun das Ergebnis ausgegeben werden. In diesen Beispiel wurden nur die TensorFlow-Konstanten verwendet. Auf die Benutzung von Variablen und Platzhaltern wird in dem Kapitel \ref{sec:ablauf} weiter eingegangen.
 
 \begin{center}
 \includegraphics[width=.6\textwidth]{../abbildungen/3-4.pdf}
-	\captionof{figure}{Datenflussgraph vor und nach eines Durchlaufs}
+	\captionof{figure}{Datenflussgraph vor und nach eines Durchlaufs (vgl.\citep{Einfuehrung}, S.31)}
 	\label{fig:vorUndNachSession}
 \end{center}
-Vor der Ausführung eines \textit{Session}-Blocks enthalten die wird durch das Aufrufen einer Operation nur eine Instanz dieses Objekts erstellt. Dieses Objekt enthält nur Referenz der Daten und noch keine richtigen Daten. Dies ändert sich mit dem Start der Ausführung und dem Durchlaufen der Operationen. Wie in der Abbildung zu sehen ist werden die Referenzen der Tensor-Objekte in A durch Tensor-Objekt-Instanzen ersetzt.
+Vor der Ausführung eines \textit{Session}-Blocks enthalten die wird durch das Aufrufen einer Operation nur eine Instanz dieses Objekts erstellt. Dieses Objekt enthält nur Referenz der Daten und noch keine richtigen Daten. Dies ändert sich mit dem Start der Ausführung und dem Durchlaufen der Operationen. Wie in der Abbildung \ref{fig:vorUndNachSession} zu sehen ist werden die Referenzen der Tensor-Objekte in A durch Tensor-Objekt-Instanzen ersetzt.
 
 \subsection{Darstellung von Operationen}
 \label{sec:darstellungOperationen}
