@@ -275,6 +275,8 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
+$*.ppt*
+
 
 /Seminararbeit_TensorFlow/thesis.pdf
 /MNIST_data/*
